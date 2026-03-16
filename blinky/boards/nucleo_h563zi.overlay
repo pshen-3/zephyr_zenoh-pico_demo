@@ -1,0 +1,40 @@
+
+/ {
+	aliases {
+		led0 = &green_led_1;
+        led1 = &red_led_1;
+	};
+};
+
+&clk_hse {
+	status = "disabled";
+};
+
+&clk_hsi {
+	status = "okay";
+};
+
+&pll {
+	status = "disabled";
+};
+
+&rcc {
+	clocks = <&clk_hsi>;
+	clock-frequency = <64000000>;
+};
+
+&leds {
+    green_led_1: led_1 {
+        gpios = <&gpioc 7 GPIO_ACTIVE_LOW>;
+        label = "User LD1";
+    };
+
+	yellow_led_1: led_2 {
+		status = "disabled";
+	};
+
+    red_led_1: led_3 {
+        gpios = <&gpioc 8 GPIO_ACTIVE_LOW>;
+        label = "User LD2";
+    };
+};
