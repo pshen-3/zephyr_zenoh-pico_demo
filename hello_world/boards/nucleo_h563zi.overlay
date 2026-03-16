@@ -1,0 +1,4 @@
+
+&clk_hse {
+	status = "disabled";
+};
